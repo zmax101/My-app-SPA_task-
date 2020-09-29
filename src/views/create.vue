@@ -43,9 +43,9 @@
           <textarea
             v-model="desc"
             id="desc"
-            class="materialize-textarea"
+            class="materialize-textarea" required
           ></textarea>
-          <label for="textarea1">Описание</label>
+          <label for="desc">Описание</label>
         </div>
         <!-- /описание --- /описание --- /описание -->
         <!-- datepick --- datepick --- datepick -->
@@ -90,15 +90,24 @@ export default {
         subtitle: this.subtitle,
         desc: this.desc,
         id: Date.now(),
-        status: "active",
+        status: 'active',
         tags: this.chips.chipsData,
         date: this.date.date,
       };
-
+      
       this.$store.dispatch('createTask', task);
       this.$router.push('/');
     },
   },
+  destroyed() {
+    if (this.date && this.date.destroy) {
+      this.date.destroy()
+    }
+
+    if (this.chips && this.chips.destroy) {
+      this.chips.destroy()
+    }
+  }
 };
 </script>
 

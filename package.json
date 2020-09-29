@@ -11,7 +11,10 @@
     "materialize-css": "^1.0.0-rc.2",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
+    "vue-a11y-dialog": "^0.5.2",
     "vue-router": "^3.2.0",
+    "vue-simple-alert": "^1.1.1",
+    "vue-swal": "^1.0.0",
     "vuex": "^3.4.0"
   },
   "devDependencies": {

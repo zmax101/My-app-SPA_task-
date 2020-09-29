@@ -1,17 +1,18 @@
 <template>
   <div class="row">
     <div class="col s8 offset-s2">
-      <h1>Добро пожаловать в #My-App!</h1>
+      <h1>Добро пожаловать, {{userName}} </h1>
 
       <hr />
 
       <h2>Текущие задачи:</h2>
+      <p class="tasks-counter">количество задач: {{tasks.length}}</p>
 
       <div class="row">
         <div
           v-for="(task, idx) of displayTasks"
           :key="task.id"
-          class="col s12 m3"
+          class="content col s12 m4 l4"
         >
           <div class="card indigo darken-4">
             <div class="card-content white-text">
@@ -19,10 +20,18 @@
               <p>
                 {{ task.desc }}
               </p>
+              <div class="date">
+                <p>{{ new Date(task.date).toLocaleDateString() }}</p>
+                <p>{{ task.status }}</p>
+              </div>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
-              <a href="#">This is a link</a>
+              <router-link
+                tag="button"
+                class="btn btn-small"
+                :to="'/task/' + task.id"
+                >подробнее</router-link
+              >
             </div>
           </div>
         </div>
@@ -49,7 +58,8 @@ export default {
       });
     },
   },
-  components: {},
+  components: {
+  },
 };
 </script>
 
@@ -60,18 +70,50 @@ h2 {
   color: white;
   font-weight: 600;
 }
+.row {
+  justify-content: space-between;
+}
+.tasks-counter {
+  color: white;
+  font-size: 24px;
+}
 .card {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   -webkit-box-shadow: 1px 5px 15px 5px rgba(0, 0, 0, 0.54);
   box-shadow: 1px 5px 15px 5px rgba(0, 0, 0, 0.54);
-  transition: .5s;
+  transition: 0.5s;
 }
 .card:hover {
   transform: scale(1.2);
 }
-.card p {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  max-width: 500px;
+.date {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+.card-action {
+  display: flex;
+  justify-content: space-around;
+}
+.card-action button {
+  background: #04202c;
+}
+.btn-comp {
+  background: green;
+  margin-left: 10px;
+}
+.btn-comp:hover {
+  background: rgb(28, 146, 28);
+  transition: 0.5s;
+}
+.btn-del {
+  background: red;
+  margin-left: 10px;
+}
+.btn-del:hover {
+  background: rgb(199, 56, 56);
+  transition: 0.5s;
 }
 </style>
