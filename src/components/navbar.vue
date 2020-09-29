@@ -14,9 +14,6 @@
           <a href="/"><i class="material-icons">view_module</i></a>
         </li>
         <li>
-          <a href="/"><i class="material-icons">refresh</i></a>
-        </li>
-        <li>
           <a href="mobile.html"><i class="material-icons">info</i></a>
         </li>
       </ul>

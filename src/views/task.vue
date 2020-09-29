@@ -29,32 +29,35 @@
           <input class="datepicker-text" type="text" ref="datepicker" />
           <!-- /datepick --- /datepick --- /datepick -->
           <!-- buttonSend --- buttonSend --- buttonSend -->
-          <button class="btn indigo darken-4" type="submit">
-            изменить
-            <i class="material-icons right">send</i>
-          </button>
-          <button
-            class="btn indigo darken-4"
-            type="submit"
-            style="margin-left: 15px"
-            @click="completeTask()"
-          >
-            выполнено
-          </button>
-          <button
-            class="btn indigo darken-4"
-            type="submit"
-            style="margin-left: 15px"
-            @click="removeTask(task)"
-          >
-            удалить
-          </button>
+          <div class="buttons">
+            <button class="btn indigo darken-4" type="submit">
+              изменить
+              <i class="material-icons right">send</i>
+            </button>
+            <button
+              class="btn green darken-4"
+              type="submit"
+              style="margin-left: 15px"
+              @click="completeTask()"
+            >
+              выполнено
+            </button>
+            <button
+              class="btn red darken-4"
+              type="submit"
+              style="margin-left: 15px"
+              @click="removeTask(task)"
+            >
+              удалить
+            </button>
+          </div>
           <!-- /buttonSend --- /buttonSend --- /buttonSend -->
         </form>
         <!-- /fomr --- /form --- /form -->
       </div>
-      <div v-else>
-          <h1>Такой задачи не найдено :с</h1>
+      <div v-else class="notFound">
+        <h1>Такой задачи не найдено :с</h1> <br>
+        <h2>или вы удалили все задачи :)</h2>
       </div>
     </div>
   </div>
@@ -118,6 +121,7 @@ export default {
 
 <style lang="scss" scoped>
 h1,
+h2,
 h4 {
   text-align: center;
   color: white;
@@ -139,5 +143,15 @@ form {
 }
 .btn-del {
   background: red;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.notFound {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 </style>

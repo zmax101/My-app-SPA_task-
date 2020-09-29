@@ -16,10 +16,10 @@
         >
           <div class="card indigo darken-4">
             <div class="card-content white-text">
-              <span class="card-title">{{ task.title }}</span>
-              <p>
+              <div class="text"><span class="card-title">{{ task.title }}</span></div>
+              <div class="text">
                 {{ task.desc }}
-              </p>
+              </div>
               <div class="date">
                 <p>{{ new Date(task.date).toLocaleDateString() }}</p>
                 <p>{{ task.status }}</p>
@@ -64,6 +64,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 500px;
+}
 h1,
 h2 {
   text-align: center;
@@ -78,9 +84,6 @@ h2 {
   font-size: 24px;
 }
 .card {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
   -webkit-box-shadow: 1px 5px 15px 5px rgba(0, 0, 0, 0.54);
   box-shadow: 1px 5px 15px 5px rgba(0, 0, 0, 0.54);
   transition: 0.5s;
