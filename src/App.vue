@@ -9,9 +9,10 @@
 
 <script>
     import navbar from '@/components/navbar'
+    import mobileNav from '@/components/mobileNav'
     export default {
-        components: {navbar}
-    }
+        components: {navbar, mobileNav}
+    };
 </script>
 
 <style lang="scss" scoped>

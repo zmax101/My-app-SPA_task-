@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col s8 offset-s2">
-      <h1>Добро пожаловать, {{userName}} </h1>
+      <h1>Добро пожаловать</h1>
 
       <hr />
 
@@ -12,7 +12,7 @@
         <div
           v-for="(task, idx) of displayTasks"
           :key="task.id"
-          class="content col s12 m4 l4"
+          class="content col s12 m6 l4"
         >
           <div class="card indigo darken-4">
             <div class="card-content white-text">
@@ -118,5 +118,26 @@ h2 {
 .btn-del:hover {
   background: rgb(199, 56, 56);
   transition: 0.5s;
+}
+
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .tasks-counter {
+    font-size: 14px;
+  }
 }
 </style>

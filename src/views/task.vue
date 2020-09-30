@@ -29,23 +29,21 @@
           <input class="datepicker-text" type="text" ref="datepicker" />
           <!-- /datepick --- /datepick --- /datepick -->
           <!-- buttonSend --- buttonSend --- buttonSend -->
-          <div class="buttons">
-            <button class="btn indigo darken-4" type="submit">
+          <div class="buttons col s12 m12 l12">
+            <button class="send btn indigo darken-4 col s12" type="submit">
               изменить
               <i class="material-icons right">send</i>
             </button>
             <button
-              class="btn green darken-4"
+              class="compl btn green darken-4 col s12"
               type="submit"
-              style="margin-left: 15px"
               @click="completeTask()"
             >
               выполнено
             </button>
             <button
-              class="btn red darken-4"
+              class="removet btn red darken-4 col s12"
               type="submit"
-              style="margin-left: 15px"
               @click="removeTask(task)"
             >
               удалить
@@ -56,7 +54,8 @@
         <!-- /fomr --- /form --- /form -->
       </div>
       <div v-else class="notFound">
-        <h1>Такой задачи не найдено :с</h1> <br>
+        <h1>Такой задачи не найдено :с</h1>
+        <br />
         <h2>или вы удалили все задачи :)</h2>
       </div>
     </div>
@@ -145,13 +144,29 @@ form {
   background: red;
 }
 .buttons {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
 }
 .notFound {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  button {
+    margin-top: 25px;
+  }
+  .buttons {
+    display: block;
+    margin-top: 5px;
+  }
 }
 </style>
