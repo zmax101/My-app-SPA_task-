@@ -29,7 +29,7 @@
           <input class="datepicker-text" type="text" ref="datepicker" />
           <!-- /datepick --- /datepick --- /datepick -->
           <!-- buttonSend --- buttonSend --- buttonSend -->
-          <div class="buttons col s12 m12 l12">
+          <div v-if="task.status !== 'completed'" class="buttons col s12 m12 l12">
             <button class="send btn indigo darken-4 col s12" type="submit">
               изменить
               <i class="material-icons right">send</i>

@@ -1,6 +1,6 @@
 // module.exports = {
 //     publicPath: process.env.NODE_ENV === 'production'
-//       ? '/VueJS-tasks-SPA/'
+//       ? '/zmax101-VueJS-tasks-SPA/'
 //       : '/<REPO>/'
 //   }
   

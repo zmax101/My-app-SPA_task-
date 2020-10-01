@@ -30,6 +30,11 @@ const router = new VueRouter({
       name: 'task',
       component: () => import('@/views/task.vue')
     },
+    {
+      path: '/info',
+      name: 'info',
+      component: () => import('@/views/info.vue')
+    }  
   ]
 })
 

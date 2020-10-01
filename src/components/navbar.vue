@@ -6,7 +6,8 @@
           <i class="material-icons">edit_location</i
           ><a class="logo-text">#My-App</a>
         </router-link>
-        <ul class="right hide-on-med-and-down">
+
+        <ul class="right">
           <li>
             <router-link to="./create">
               <i class="material-icons pulse">control_point</i>
@@ -18,9 +19,7 @@
             >
           </li>
           <li>
-            <router-link to="#"
-              ><i class="material-icons">info</i></router-link
-            >
+            <router-link to="./info"><i class="material-icons">info</i></router-link>
           </li>
         </ul>
       </div>
@@ -34,11 +33,25 @@ export default {};
 
 <style scoped lang="scss">
 nav {
-  padding: 0 10px;
+  padding: 0 10px 70px;
+}
+.burger {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .brand-logo {
+    left: 0;
+    transform: translateX(0);
+  }
 }
 @media screen and (max-width: 480px) {
   .logo-text {
-    font-size: 20px;
+    display: none;
+  }
+  .burger {
+    display: block;
+    float: right;
   }
 }
 </style>
+
